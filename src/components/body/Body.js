@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Icon, Grid, Button, Modal } from 'semantic-ui-react'
+import { Icon, Button, Modal } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 import './Style.css'
 
@@ -7,7 +7,7 @@ class Body extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      open: false
+      
     }
   }
   show = size => () => this.setState({ size, open: true })
@@ -21,14 +21,16 @@ class Body extends Component {
     window.open('https://github.com/bramprasetyop')
   }
 
-  closeModal() {
-    this.setState({
-      open: false
-    })
-  }
-
   emailPage() {
-    window.open('https://mail.google.com/mail/u/0/?view=cm&fs=1&to=bramprasetyop@gmail.com')
+    window.open(
+      'https://mail.google.com/mail/u/0/?view=cm&fs=1&to=bramprasetyop@gmail.com'
+    )
+  }
+  
+  whatsapp(){
+    window.open(
+      'https://api.whatsapp.com/send?phone=6281289783082'
+    )
   }
 
   render() {
@@ -51,29 +53,10 @@ class Body extends Component {
           reach me using links below.
           <hr />
         </h4>
-
-        <Icon name="linkedin" size="large" onClick={this.linkedin.bind(this)} />
+        <Icon  name="linkedin" size="large" onClick={this.linkedin.bind(this)} />
         <Icon name="github" size="large" onClick={this.github.bind(this)} />
-        <Icon name="envelope" size="large" onClick={this.show('tiny')} />
-
-        <Modal size={size} open={open} onClose={this.close}>
-          <Modal.Header>Click YES if you want to send me an email.</Modal.Header>
-          <Modal.Content>
-            <h4>Bramprasetyop@gmail.com</h4>
-          </Modal.Content>
-          <Modal.Actions>
-            <Button negative onClick={this.closeModal.bind(this)}>
-              No
-            </Button>
-            <Button
-              positive
-              icon="checkmark"
-              labelPosition="right"
-              content="Yes"
-              onClick={this.emailPage.bind(this)}
-            />
-          </Modal.Actions>
-        </Modal>
+        <Icon name="envelope" size="large" onClick={this.emailPage.bind(this)} />
+        <Icon name="whatsapp" size="large" onClick={this.whatsapp.bind(this)} />
       </div>
     )
   }

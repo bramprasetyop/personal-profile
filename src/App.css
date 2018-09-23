@@ -15,9 +15,9 @@ body {
 }
 
 .Photo-image{
-  height: 200px;
+  height: 190px;
   object-fit: cover;
-  margin: 1px;
+  margin: 6px;
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
