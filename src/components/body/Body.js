@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Icon, Button, Modal } from 'semantic-ui-react'
+import { Icon } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 import './Style.css'
+
 
 class Body extends Component {
   constructor(props) {
@@ -10,9 +11,6 @@ class Body extends Component {
       
     }
   }
-  show = size => () => this.setState({ size, open: true })
-  close = () => this.setState({ open: false })
-
   linkedin() {
     window.open('https://www.linkedin.com/in/brama-prasetyo-permana-647599116/')
   }
@@ -34,7 +32,6 @@ class Body extends Component {
   }
 
   render() {
-    const { open, size } = this.state
     return (
       <div className="Body-text">
         <h1>Brama Prasetyo Permana</h1>
@@ -53,13 +50,14 @@ class Body extends Component {
           reach me using links below.
           <hr />
         </h4>
-        <Icon  name="linkedin" size="large" onClick={this.linkedin.bind(this)} />
-        <Icon name="github" size="large" onClick={this.github.bind(this)} />
-        <Icon name="envelope" size="large" onClick={this.emailPage.bind(this)} />
-        <Icon name="whatsapp" size="large" onClick={this.whatsapp.bind(this)} />
+        <Icon style={{cursor:'pointer'}} name="linkedin" size="large" onClick={this.linkedin.bind(this)} />
+        <Icon style={{cursor:'pointer'}} name="github" size="large" onClick={this.github.bind(this)} />
+        <Icon style={{cursor:'pointer'}} name="envelope" size="large" onClick={this.emailPage.bind(this)} />
+        <Icon style={{cursor:'pointer'}} name="whatsapp" size="large" onClick={this.whatsapp.bind(this)} />
       </div>
     )
   }
 }
+
 
 export default Body
