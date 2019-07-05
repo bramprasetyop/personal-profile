@@ -50,7 +50,7 @@ class Body extends Component {
           reach me using links below.
           <hr />
         </h4>
-        <Icon style={{cursor:'pointer'}} name="linkedin" size="large" onClick={this.linkedin.bind(this)} />
+        <Icon style={{cursor:'pointer'}} name="linkedin alternate" size="large" onClick={this.linkedin.bind(this)} />
         <Icon style={{cursor:'pointer'}} name="github" size="large" onClick={this.github.bind(this)} />
         <Icon style={{cursor:'pointer'}} name="envelope" size="large" onClick={this.emailPage.bind(this)} />
         <Icon style={{cursor:'pointer'}} name="whatsapp" size="large" onClick={this.whatsapp.bind(this)} />
